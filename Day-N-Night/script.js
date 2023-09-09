@@ -1,20 +1,55 @@
 /*
-Top of the calendar - current day displayed at the top
-Scroll down should see time blocks for standard business hours 9 am to 5 pm
-Each block is color coded to show past present or future
 Can click into a block and enter an event
 When clicking the save button for the time block should save text to local storage
 Saved data should stay saved
 */
 
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-console.log(day.js())
 // A $( document ).ready() block.
-$( document ).ready(function() {
-  console.log( "ready!" );
+$(document).ready(function() {
+  var now = dayjs()
+  const currentDate = $('#currentDay');
+
+  // This sets the dayjs hour
+  const currentHour = dayjs().hour();
+  
+
+      
+    // Loop through all div elements with a 'data-time' attribute
+    $('div[data-time]').each(function() {
+      // Get the 'data-time' attribute and convert it to an integer
+      const dataTime = parseInt($(this).attr('data-time'), 10); 
+      
+      // Add the class 'present' if the data-time attribute is equal to the current hour
+      if (dataTime == currentHour) {
+        $(this).addClass('present');
+      }
+      
+      else if (dataTime > currentHour) {
+        // Add the class 'future' if the data-time attribute is greater than the current hour
+        $(this).addClass('future'); 
+      }
+    });
+  
+
+
+
+  $(function() {
+  
+    if (currentHour < 12) {
+      $('#currentDay').text('Good morning!');
+    } else if (currentHour < 18) {
+      $('#currentDay').text('Good afternoon!');
+    } else {
+      $('#currentDay').text('Good evening!');
+    }
+  });
+  
+
+  currentDate.text(now);
+  currentDate.text(currentHour);
+
 });
+
 
 
 $(function () {
