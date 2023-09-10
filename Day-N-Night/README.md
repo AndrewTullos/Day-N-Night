@@ -35,7 +35,7 @@ I gained deeper insights into DOM manipulation using jQuery, local storage, and 
 
 The application starts by displaying the current day and time slots divided into past, present, and future. Users can enter their tasks in the text areas provided and click the save button to store them locally. Saved tasks persist even after the page is reloaded.
 
-![Work-Day-Scheduler Screenshot](./assets/05-third-party-apis-homework-demo.jpg)
+![Work-Day-Scheduler Screenshot](./Assets/images/05-third-party-apis-homework-demo.jpg)
 
 ## Credits
 
