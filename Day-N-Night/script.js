@@ -1,11 +1,9 @@
 
 
-// A $( document ).ready() block.
 $(document).ready(function() {
   var now = dayjs()
   const currentDate = $('#currentDay');
-  // const 
-
+ 
   // This sets the dayjs hour
   const currentHour = dayjs().hour();
   
@@ -28,6 +26,7 @@ $(document).ready(function() {
     });
 
 
+    // lil somthin extra
   $(function() {
   
     if (currentHour < 12) {
